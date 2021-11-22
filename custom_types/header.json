@@ -1,0 +1,22 @@
+{
+    "Main": {
+        "header_img": {
+            "type": "Image",
+            "config": {
+                "constraint": {
+                    "width": 100,
+                    "height": 100
+                },
+                "thumbnails": [],
+                "label": "header_img"
+            }
+        },
+        "header_title": {
+            "type": "StructuredText",
+            "config": {
+                "single": "heading3",
+                "label": "header_title"
+            }
+        }
+    }
+}

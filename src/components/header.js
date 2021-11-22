@@ -1,42 +1,58 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import styled from "styled-components"
+import Button from "./Button"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
+const Header = ({ siteTitle, headerLogo }) => (
+  <HeaderWrap>
+    <HeaderLogoWrap>
+      <HeaderLogoImg src={headerLogo} alt="our logo"/>
+      <HeaderTitle>
+        <HeaderLink to="/" >
           {siteTitle}
-        </Link>
-      </h1>
+        </HeaderLink>
+      </HeaderTitle>
+    </HeaderLogoWrap>
+    <div>
+      <Button 
+        btnTitle={'UA'}
+        enable={false}
+        />
+      <Button
+        btnTitle={'ENG'}
+        enable={true}
+      />
     </div>
-  </header>
+  </HeaderWrap>
 )
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+  headerLogo: PropTypes.string,
 }
 
 export default Header
+
+const HeaderTitle = styled.h1`
+  margin: 0; 
+`
+const HeaderLink = styled(Link)`
+  color: white;
+  text-decoration: none;
+`
+const HeaderWrap = styled.header`
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 75px;
+  align-items: center;
+  background: rebeccapurple;
+`
+const HeaderLogoWrap = styled.div`
+  display: flex;
+  justify-content: start;
+  align-items: center;
+`
+const HeaderLogoImg = styled.img`
+  margin-right: 20px;
+`
