@@ -27,7 +27,7 @@ export default SideBar
 const SideBarWrap = styled.nav`
   background-color: red;
   max-width: 250px;
-  height: 100vh;
+  min-height: 100%;
   position: sticky;
   display: flex;
   flex-direction: column;

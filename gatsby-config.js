@@ -18,6 +18,7 @@ module.exports = {
         schemas: {
           header: require("./custom_types/header.json"),
           doc: require("./custom_types/doc.json"),
+          blog_post: require("./custom_types/blog.json"),
         },
       },
     },
